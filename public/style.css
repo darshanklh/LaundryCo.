@@ -1,0 +1,970 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap');
+/* Global Styles */
+
+/* Global Styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif; /* <-- UPDATED FONT */
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    line-height: 1.6;
+    color: #333; /* <-- Default text color */
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+section {
+    padding: 60px 0;
+}
+
+/* Navbar Styling */
+.navbar {
+    background: #fff;
+    color: #333;
+    padding: 20px 0;
+    border-bottom: 1px solid #f0f0f0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar .logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.navbar .nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.navbar .nav-links li {
+    margin-left: 20px;
+}
+
+/* --- Navbar Link Styling --- */
+.navbar .nav-links a {
+    text-decoration: none;
+    color: #555;
+    font-weight: 600;
+    padding: 8px 12px; /* Creates space for the background */
+    border-radius: 5px; /* Rounds the corners of the background */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth fade */
+}
+
+/* --- Navbar Link HOVER Effect --- */
+.navbar .nav-links a:hover {
+    background-color: #e6f7ff; /* Light blue background */
+    color: #007bff; /* Makes the text blue */
+}
+
+/* Hero Section Styling */
+#hero {
+    background: #f9f9f9;
+}
+
+.hero-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.hero-left {
+    flex: 1;
+    padding-right: 40px;
+}
+
+.hero-left h1 {
+    font-size: 42px;
+    margin-bottom: 20px;
+    color: #333;
+}
+/* ADD THIS NEW RULE */
+.hero-left h1 span {
+    color: #007bff;
+}
+
+.hero-left p {
+    font-size: 18px;
+    margin-bottom: 30px;
+    color: #555;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 24px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background: #007bff;
+    color: #fff;
+}
+
+.btn-primary:hover {
+    background: #0056b3;
+}
+
+.hero-right img {
+    max-width: 400px;
+    border-radius: 10px;
+}
+
+/* Achievements Section Styling */
+#achievements {
+    background: #007bff;
+    color: #fff;
+}
+
+.achievements-content {
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+}
+
+.achievement-item h3 {
+    font-size: 36px;
+    font-weight: bold;
+}
+
+.achievement-item p {
+    font-size: 18px;
+}
+
+/* Booking Section Styling */
+.booking-content {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+/* Left Div */
+.services-list {
+    flex: 1.5;
+}
+.services-list h2 {
+    margin-bottom: 10px;
+}
+.services-list > p {
+    margin-bottom: 20px;
+    color: #666;
+}
+
+.service-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.service-details span:first-child {
+    font-weight: bold;
+    margin-right: 15px;
+}
+
+.btn-add-item {
+    background: #28a745;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.btn-add-item:hover {
+    background: #218838;
+}
+
+/* Right Div */
+/* --- New Right Column Wrapper --- */
+.right-column {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 30px; /* This creates the space BETWEEN the two cards */
+}
+
+/* --- New Card Styling (for both) --- */
+.cart-container,
+.form-container {
+    background: #fff;
+    padding: 25px;
+    border-radius: 12px; /* Matches the rounded corners in the image */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.07); /* Adds the soft shadow */
+}
+
+/* --- Adjustments --- */
+/* Make Total Amount stand out more */
+.total-amount {
+    margin-top: 20px; /* Space above total */
+    padding-top: 20px; /* Space below items */
+}
+
+/* Make 'Book Now' button spacing correct */
+.btn-book-now {
+    margin-top: 15px; /* Add space above button */
+}
+
+/* Tweak for h2 headings inside the new cards */
+.cart-container h2,
+.form-container h2 {
+    margin-bottom: 20px;
+    text-align: center; /* Center "Added Items" and "Book Now" */
+}
+
+.booking-cart h2 {
+    margin-bottom: 20px;
+}
+
+#cart-items-list {
+    margin-bottom: 20px;
+}
+
+/* Styles for items added to cart */
+/* --- Cart Table Styling --- */
+.cart-table {
+    width: 100%;
+    border-collapse: collapse; /* Removes gaps between cells */
+    margin-bottom: 20px;
+}
+
+.cart-table th,
+.cart-table td {
+    padding: 12px 10px; /* Adds nice spacing */
+    border-bottom: 1px solid #eee; /* Light lines between rows */
+}
+
+.cart-table th {
+    background-color: #f8f9fa; /* Light gray header */
+    text-align: left;
+    font-size: 14px;
+    font-weight: 600;
+    color: #555;
+}
+
+/* Column-specific alignments */
+.cart-table th:first-child,
+.cart-table td:first-child {
+    /* For "S.No" */
+    width: 50px;
+    text-align: center;
+    color: #777;
+}
+
+.cart-table th:last-child,
+.cart-table td:last-child {
+    /* For "Price" */
+    text-align: right;
+    width: 100px;
+    font-weight: 600;
+}
+
+/* "No Items" row styling */
+.cart-table .no-items {
+    text-align: center;
+    color: #888;
+    padding: 20px 0;
+    font-style: italic;
+}
+
+.total-amount {
+    display: flex;
+    justify-content: space-between;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    padding-top: 10px;
+    border-top: 2px solid #ddd;
+}
+
+/* Booking Form */
+/* --- Booking Form Styling --- */
+.form-group {
+    margin-bottom: 15px; /* Space between form rows */
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+    font-size: 14px;
+    color: #444;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px 15px; /* Make inputs a bit taller */
+    border: 1px solid #ddd;
+    border-radius: 8px; /* More rounded corners */
+    font-size: 15px;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Style for placeholder text */
+.form-group input::placeholder {
+    color: #aaa;
+}
+
+/* Style for when user clicks into the input */
+.form-group input:focus {
+    border-color: #007bff; /* Blue border on focus */
+    outline: none; /* Remove default blue glow */
+    box-shadow: 0 0 0 3px rgba(0,123,255,0.1); /* Add soft glow */
+}
+
+/* This is the new magic! */
+.form-row {
+    display: flex; /* Puts children side-by-side */
+    gap: 15px; /* Space between Email and Phone */
+}
+
+/* Make each group in the row take up equal space */
+.form-row .form-group {
+    flex: 1; 
+    margin-bottom: 0; /* Margin is handled by the parent */
+}
+
+/* Ensure the Book Now button is full width */
+.btn-book-now {
+    width: 100%;
+    padding-top: 15px; /* Make button taller */
+    padding-bottom: 15px;
+    font-size: 16px;
+    margin-top: 10px; /* Add space above the button */
+}
+
+/* ADD THIS NEW RULE */
+#booking-error-msg {
+    color: #dc3545; /* A standard, clear red */
+    font-weight: 600;
+    margin-top: 10px;
+    text-align: center;
+}
+
+/* Quality Section Styling */
+#quality {
+    background: #f9f9f9;
+}
+.quality-content {
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    gap: 20px;
+}
+.quality-item {
+    flex: 1;
+}
+/* Style for the new quality icons */
+.quality-item img {
+    height: 60px;           /* Sets a uniform height for the icons */
+    margin-bottom: 15px;    /* Adds space between the icon and the text below it */
+}
+
+/* Newsletter Section Styling */
+#newsletter {
+    background: #007bff;
+    color: white;
+    text-align: center;
+}
+.newsletter-form {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+.newsletter-form input {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    width: 250px;
+}
+.newsletter-form button {
+    background: #333;
+    color: white;
+    border: none;
+}
+
+/* ========== ENHANCED FOOTER STYLING ========== */
+
+#footer {
+    background: #222; /* Slightly darker, more modern black */
+    color: #ccc;     /* Softer text color than pure white */
+    padding-top: 80px; /* More top padding */
+    /* Padding-bottom is removed, will be handled by footer-bottom */
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    flex-wrap: wrap; /* Allows columns to stack on small screens */
+    margin-bottom: 60px; /* Space above the copyright bar */
+}
+
+.footer-col {
+    flex: 1; /* All columns are flexible */
+    min-width: 180px; /* Prevents columns from getting too small */
+}
+/* --- Footer Logo Column (first one) --- */
+
+
+
+.footer-col .logo {
+    font-size: 24px; /* Reduced for footer */
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Space between img and text */
+}
+
+.footer-col .logo img {
+    height: 40px; /* <<< CRITICAL FIX: Was 150px, now 40px */
+    width: auto;
+}
+
+.footer-col p {
+    font-size: 15px;
+    line-height: 1.7;
+    margin-bottom: 10px;
+}
+
+/* --- Footer Headings (Links, Contact, Follow) --- */
+.footer-col h4 {
+    font-size: 18px;
+    color: #fff;
+    margin-bottom: 25px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+/* Adds the little blue line under headings */
+.footer-col h4::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 40px;
+    height: 2px;
+    background-color: #007bff;
+}
+
+/* --- Footer Links List --- */
+.footer-col ul {
+    list-style: none;
+}
+
+.footer-col ul li {
+    margin-bottom: 12px;
+}
+
+.footer-col ul li a {
+    text-decoration: none;
+    color: #ccc;
+    display: inline-block;
+    padding: 2px 0;
+    transition: all 0.3s ease;
+}
+
+.footer-col ul li a:hover {
+    color: #007bff; /* Primary blue on hover */
+    transform: translateX(5px); /* Moves link slightly right */
+}
+
+/* --- Contact Info Icons --- */
+.footer-col p i {
+    color: #007bff; /* Icon color */
+    margin-right: 10px;
+    width: 20px;
+    text-align: center;
+}
+/* --- Social Media Icons --- */
+.social-links a {
+    display: inline-flex; /* Use flex to center icon */
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: #444;
+    color: #fff;
+    font-size: 16px;
+    margin-right: 10px;
+    border-radius: 50%; /* Makes them circles */
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+    background: #007bff; /* Primary blue on hover */
+    color: #fff;
+    transform: translateY(-3px); /* Lifts icon up */
+}
+
+/* --- Copyright Bar (Sub-Footer) --- */
+.footer-bottom {
+    background-color: #111; /* Darkest background */
+    text-align: center;
+    padding: 20px 0;
+    color: #999;
+    font-size: 14px;
+}
+
+/* Style for the 'Add Item' button */
+.btn-add-item {
+    background: #28a745; /* Green */
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+.btn-add-item:hover {
+    background: #218838;
+}
+
+/* Style for the 'Remove Item' button */
+.btn-remove-service {
+    background: #dc3545; /* Red */
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+.btn-remove-service:hover {
+    background: #c82333;
+}
+/* Style for the service buttons */
+.btn-service {
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    color: white;
+}
+
+.btn-service.add {
+    background: #28a745; /* Green */
+}
+.btn-service.add:hover {
+    background: #218838;
+}
+
+.btn-service.remove {
+    background: #dc3545; /* Red */
+}
+.btn-service.remove:hover {
+    background: #c82333;
+}
+/* ========== UPDATED BUTTON STYLES ========== */
+
+/* --- Primary Button (Blue) --- */
+/* This styles 'Book a Service', 'Subscribe', and 'Book Now' */
+/* --- Primary Button (Blue) --- */
+/* This styles 'Book a Service', 'Subscribe', and 'Book Now' */
+.btn-primary {
+    display: inline-flex;  /* <-- CHANGED from inline-block */
+    align-items: center;   /* <-- ADD THIS LINE */
+    gap: 1px;              /* <-- ADD THIS LINE */
+    padding: 12px 24px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+    background: #007bff;
+    color: #fff;
+    font-size: 18px;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3);
+    transition: all 0.3s ease-in-out;
+}
+/* --- New rule for the icon image --- */
+.btn-icon {
+    height: 4em;
+    width: auto;
+    filter: brightness(0) invert(1); /* This trick makes a dark icon white */
+}
+
+.btn-primary:hover {
+    background: #0056b3;
+    box-shadow: 0 6px 16px rgba(0, 86, 179, 0.4);
+    transform: translateY(-2px); /* Lifts the button slightly */
+}
+
+.btn-primary:active {
+    transform: translateY(0); /* Pushes button back down on click */
+    box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3);
+}
+
+/* Disabled state for 'Booking...' */
+.btn-primary:disabled {
+    background: #999;
+    box-shadow: none;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* --- Service Add/Remove Buttons --- */
+.btn-service {
+    border: none;
+    padding: 10px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    color: white;
+    font-size: 14px;
+    min-width: 120px; /* Ensures 'Add' and 'Remove' are same width */
+    text-align: center;
+    transition: all 0.3s ease-in-out;
+}
+
+.btn-service.add {
+    background: #28a745; /* Green */
+    box-shadow: 0 4px 12px rgba(40, 167, 69, 0.3);
+}
+.btn-service.add:hover {
+    background: #218838;
+    box-shadow: 0 6px 16px rgba(33, 136, 56, 0.4);
+    transform: scale(1.05); /* Slightly enlarges the button */
+}
+
+.btn-service.remove {
+    background: #dc3545; /* Red */
+    box-shadow: 0 4px 12px rgba(220, 53, 69, 0.3);
+}
+.btn-service.remove:hover {
+    background: #c82333;
+    box-shadow: 0 6px 16px rgba(200, 35, 51, 0.4);
+    transform: scale(1.05); /* Slightly enlarges the button */
+}
+
+.btn-service:active {
+    transform: scale(1); /* Resets scale on click */
+    box-shadow: none;
+}
+
+/* ========== TYPOGRAPHY & TEXT STYLES ========== */
+
+/* --- General Heading Styles --- */
+h1, h2, h3, h4 {
+    margin-bottom: 20px;
+    line-height: 1.3;
+    font-weight: 700; /* Bold by default */
+}
+
+/* --- Navbar Logo --- */
+.navbar .logo {
+    font-size: 28px;
+    font-weight: 700;
+    color: #007bff; /* Primary blue color */
+    display: flex; /* Puts image and text side-by-side */
+    align-items: center; /* Vertically centers them */
+    gap: 4px; /* Adds a small space between them */
+}
+
+/* This new rule controls the logo's size */
+.navbar .logo img {
+    height: 80px; /* You can adjust this height */
+    width: auto;
+}
+
+/* --- Hero Section Text --- */
+.hero-left h1 {
+    font-size: 48px;
+    font-weight: 800; /* Extra bold */
+    color: #222;
+    margin-bottom: 20px;
+}
+
+.hero-left p {
+    font-size: 18px;
+    margin-bottom: 30px;
+    color: #555; /* Slightly lighter text */
+}
+
+/* --- Achievements Section --- */
+.achievement-item h3 {
+    font-size: 42px;
+    font-weight: 800;
+}
+
+.achievement-item p {
+    font-size: 18px;
+    opacity: 0.9;
+}
+
+/* --- Section Headings (Services, Cart, etc.) --- */
+h2 {
+    font-size: 36px;
+    color: #111;
+    margin-bottom: 25px;
+}
+/* Reduce margin for h2 in the booking section */
+.services-list h2,
+.booking-cart h2 {
+    margin-bottom: 15px;
+}
+
+
+/* --- Service Item Prices --- */
+.service-details span:first-child {
+    font-weight: 600; /* Bolder */
+    font-size: 17px;
+    color: #333;
+}
+.service-details span:last-child {
+    font-weight: 600;
+    font-size: 16px;
+    color: #007bff; /* Price in primary color */
+}
+
+/* --- Cart Total Amount --- */
+.total-amount {
+    font-size: 22px; /* Bigger */
+    font-weight: 700; /* Bolder */
+    color: #111;
+    border-top: 2px solid #ddd;
+    padding-top: 15px;
+    margin-top: 10px; /* Add some space above */
+}
+
+/* --- Quality Section --- */
+.quality-item h4 {
+    font-size: 20px;
+    color: #222;
+    margin-bottom: 10px;
+}
+
+.quality-item p {
+    color: #555;
+    font-size: 15px;
+}
+
+/* --- Newsletter Section --- */
+#newsletter h3 {
+    font-size: 32px;
+    margin-bottom: 25px;
+}
+
+/* --- Footer --- */
+/* --- Footer --- */
+
+.footer-col .logo {
+    font-size: 28px;
+    font-weight: 700;
+    color: #fff; /* White on dark bg */
+    margin-bottom: 10px;
+    display: flex; /* Puts image and text side-by-side */
+    align-items: center; /* Vertically centers them */
+    gap: 15px; /* Adds a small space between them */
+}
+
+/* This new rule controls the logo's size */
+.footer-col .logo img {
+    height: 80px; /* You can adjust this height */
+    width: auto;
+    margin-right: -8px;
+}
+
+
+.footer-col h4 {
+    font-size: 18px;
+    color: #fff;
+    margin-bottom: 15px;
+}
+
+/* --- Navbar Username Styling --- */
+.navbar .username {
+    font-weight: 600;
+    color: #555;
+    padding: 8px 12px; /* Creates space for the background */
+    border-radius: 5px; /* Rounds the corners of the background */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth fade */
+    cursor: pointer;
+}
+
+/* --- Navbar Username HOVER Effect --- */
+.navbar .username:hover {
+    background-color: #e6f7ff; /* Light blue background */
+    color: #007bff; /* Makes the text blue */
+}
+/* --- Service Icon Styling --- */
+.service-details span:first-child i {
+    color: #007bff; /* Sets the icon color (change as you like) */
+    margin-right: 10px; /* Adds space between icon and text */
+    width: 20px; /* Ensures icons are aligned nicely */
+    text-align: center;
+}
+
+/* ============================================== */
+/* ========== RESPONSIVE STYLES START ========== */
+/* ============================================== */
+
+/* --- Tablet Breakpoint --- */
+/* (Applies to screens 992px wide or smaller) */
+@media (max-width: 992px) {
+    .container {
+        max-width: 90%; /* Give content more space */
+    }
+
+    .hero-content {
+        flex-direction: column; /* Stack hero image under text */
+        text-align: center;
+    }
+    
+    .hero-left {
+        padding-right: 0; /* Remove side padding */
+        margin-bottom: 30px;
+    }
+
+    .booking-content {
+        flex-direction: column; /* Stack booking form under services */
+    }
+
+    .quality-content {
+        flex-wrap: wrap; /* Let quality items wrap (2x2 grid) */
+        justify-content: center;
+    }
+    
+    .quality-item {
+        flex-basis: 45%; /* Each item takes ~half the width */
+        margin-bottom: 20px;
+    }
+    
+    .footer-content {
+        justify-content: center; /* Center footer columns */
+        text-align: center;
+    }
+
+    .footer-col h4::after {
+        left: 50%; /* Center the underline */
+        transform: translateX(-50%);
+    }
+}
+
+
+/* --- Mobile Breakpoint --- */
+/* (Applies to screens 768px wide or smaller) */
+@media (max-width: 768px) {
+    
+    /* --- Mobile Navbar --- */
+    .navbar .container {
+        position: relative; /* Needed for menu positioning */
+    }
+    
+    .navbar .nav-links {
+        display: none; /* Hide the links by default */
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 80px; /* Position below navbar (adjust if logo is taller) */
+        left: 0;
+        background: #fff;
+        padding: 20px 0;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    
+    .navbar .nav-links.active {
+        display: flex; /* Show the menu when active class is added */
+    }
+
+    .navbar .nav-links li {
+        margin-left: 0;
+        text-align: center;
+        width: 100%;
+    }
+    
+    .navbar .nav-links a {
+        padding: 15px 0;
+        display: block; /* Make link fill the space */
+    }
+    
+    .menu-toggle {
+        display: block; /* Show the hamburger icon */
+        font-size: 24px;
+        cursor: pointer;
+        color: #333;
+    }
+    
+    .navbar .username {
+        display: none; /* Hide "Username" text on small screens */
+    }
+
+    /* --- Typography --- */
+    .hero-left h1 {
+        font-size: 36px; /* Reduce heading size */
+    }
+    
+    h2 {
+        font-size: 30px; /* Reduce all section headings */
+    }
+    
+    .achievement-item h3 {
+        font-size: 32px;
+    }
+
+    /* --- Section Layout --- */
+    .achievements-content {
+        flex-direction: column; /* Stack achievement items */
+        gap: 20px;
+    }
+
+    .hero-right img {
+        width: 100%; /* Make hero image fill its container */
+        max-width: 350px;
+    }
+
+    .quality-item {
+        flex-basis: 100%; /* Stack all quality items (1x1) */
+    }
+
+    .newsletter-form {
+        flex-direction: column; /* Stack newsletter inputs */
+        width: 100%;
+    }
+    
+    .newsletter-form input {
+        width: 100%;
+    }
+    
+    .form-row {
+        flex-direction: column; /* Stack Email and Phone fields */
+        gap: 0; /* Remove gap, form-group handles margin */
+    }
+}
+
+
+/* --- Utility rule (hides hamburger on desktop) --- */
+.menu-toggle {
+    display: none;
+}
